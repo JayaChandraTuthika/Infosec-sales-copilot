@@ -8,15 +8,15 @@ import { ThreeDots } from "react-loader-spinner";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-const MarkdownComponent = ({ content }) => {
-  return (
-    <ReactMarkdown
-      remarkPlugins={[remarkGfm]} // Adds support for GitHub-flavored Markdown
-    >
-      {content}
-    </ReactMarkdown>
-  );
-};
+// const MarkdownComponent = ({ content }) => {
+//   return (
+//     <ReactMarkdown
+//       remarkPlugins={[remarkGfm]} // Adds support for GitHub-flavored Markdown
+//     >
+//       {content}
+//     </ReactMarkdown>
+//   );
+// };
 
 import { marked } from "marked";
 import DOMPurify from "dompurify";
