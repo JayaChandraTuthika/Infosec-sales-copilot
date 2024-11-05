@@ -135,7 +135,7 @@
   margin-right: 10px;
   color: #636363;
 }
-.market-insights-intro-card .suggestions {
+.suggestions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
