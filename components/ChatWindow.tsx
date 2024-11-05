@@ -32,7 +32,9 @@ const ChatWindow = ({
                   <RiRobot3Fill />
                 </span>
                 <div>
-                  <Markdown>{chat.message}</Markdown>
+                  <Markdown options={{ forceBlock: true }}>
+                    {chat.message}
+                  </Markdown>
                 </div>
               </div>
             );
@@ -80,7 +82,9 @@ const ChatWindow = ({
                 </span>
                 {/* <p>{chat.message}</p> */}
                 <div>
-                  <Markdown>{chat.message}</Markdown>
+                  <Markdown options={{ forceBlock: true }}>
+                    {chat.message}
+                  </Markdown>
                 </div>
               </div>
             );
@@ -145,7 +149,9 @@ const ChatWindow = ({
                   <RiRobot3Fill />
                 </span>
                 <div>
-                  <Markdown>{chat.message}</Markdown>
+                  <Markdown options={{ forceBlock: true }}>
+                    {chat.message}
+                  </Markdown>
                 </div>
               </div>
             );
