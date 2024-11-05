@@ -1,0 +1,72 @@
+{
+  "data": [
+    {
+      "session_id": "11",
+      "cyber_glossary": [
+        {
+          "type": "user",
+          "message": "Test"
+        },
+        {
+          "type": "bot",
+          "message": "Test bot"
+        }
+      ],
+      "market_research": [
+        {
+          "type": "user",
+          "message": "Test"
+        },
+        {
+          "type": "bot",
+          "message": "Test bot"
+        }
+      ],
+
+      "product_catalog": [
+        {
+          "type": "user",
+          "message": "Test"
+        },
+        {
+          "type": "bot",
+          "message": "Test bot"
+        }
+      ]
+    },
+    {
+      "session_id": "12",
+      "cyber_glossary": [
+        {
+          "type": "user",
+          "message": "Test"
+        },
+        {
+          "type": "bot",
+          "message": "Test bot"
+        }
+      ],
+      "market_research": [
+        {
+          "type": "user",
+          "message": "Test"
+        },
+        {
+          "type": "bot",
+          "message": "Test bot"
+        }
+      ],
+
+      "product_catalog": [
+        {
+          "type": "user",
+          "message": "Test"
+        },
+        {
+          "type": "bot",
+          "message": "Test bot"
+        }
+      ]
+    }
+  ]
+}

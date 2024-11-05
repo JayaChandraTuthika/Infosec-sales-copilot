@@ -2,20 +2,169 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(245, 245, 245);
 }
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Home page styles [start] */
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.landing h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+.landing p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #686868;
+  margin-top: 0px;
+}
+.landing .features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 30px;
+}
+/* .landing .feature:nth-child(1) {
+  box-shadow: 3px 3px 15px 0px rgb(216, 216, 216);
+}
+.landing .feature:nth-child(2) {
+  box-shadow: 3px 3px 15px 0px rgb(216, 216, 216);
+}
+.landing .feature:nth-child(3) {
+  box-shadow: 3px 3px 15px 0px rgb(216, 216, 216);
+}
+.landing .feature:nth-child(4) {
+  box-shadow: 3px 3px 15px 0px rgb(216, 216, 216);
+} */
+.landing .feature {
+  background-color: white;
+  padding: 20px 28px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+.landing .feature:hover {
+  box-shadow: 4px 4px 20px 0px rgb(216, 216, 216);
+}
+.landing .feature .text {
+  flex-grow: 1;
+  padding: 10px;
+}
+.landing .feature .text .title {
+  color: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  background-clip: text;
+  background-image: linear-gradient(to right, #00b5df, #00a46f);
+  margin-top: 0px;
+}
+.landing .feature .text .description {
+  color: #4b4b4b;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 0px;
+}
+.landing .launch-btn {
+  font-size: 17px;
+  color: white;
+  font-weight: 600;
+  /* background-color: #00b5df; */
+  background-image: linear-gradient(to right, #00b5df, #00a46f);
+  border: none;
+  outline: none !important;
+  width: 350px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s all ease;
+}
+.landing .launch-btn svg {
+  height: 1.5em;
+  width: 1.5em;
+}
+.landing .launch-btn:hover {
+  box-shadow: 3px 3px 15px 0px rgba(19, 141, 172, 0.418);
+}
+/* Home page styles [end] */
