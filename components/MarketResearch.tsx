@@ -9,6 +9,7 @@ import Suggessions from "./Suggessions";
 import { LuBuilding2 } from "react-icons/lu";
 import { PiSuitcaseBold } from "react-icons/pi";
 import { FiLink } from "react-icons/fi";
+import { useToast } from "@/hooks/use-toast";
 
 type ChatMessage = {
   type: string;
@@ -27,6 +28,7 @@ const MarketResearch = () => {
     urlList: [],
   });
   const [urlInput, setUrlInput] = useState("");
+  const { toast } = useToast();
 
   const selectSuggestion = (text: string) => {
     const mockData = {
@@ -104,9 +106,16 @@ const MarketResearch = () => {
       `/api/market-research?session_id=${sessionId}&feature=market_insights`
     );
     if (response.data.success) {
-      let newChatHistory = response.data.result.history;
-      console.log(newChatHistory);
-      setChatHistory(newChatHistory);
+      if (typeof window !== "undefined") {
+        toast({
+          title: "Latest Market Insights",
+          description: "Fetched Successfully",
+        });
+      }
+
+      let latestMarketInsight = response.data.result.history;
+      // console.log(latestMarketInsight);
+      setChatHistory([latestMarketInsight]);
     }
   };
 

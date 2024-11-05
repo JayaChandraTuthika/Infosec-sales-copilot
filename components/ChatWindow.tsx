@@ -5,6 +5,24 @@ import { RiRobot3Fill } from "react-icons/ri";
 import Markdown from "markdown-to-jsx";
 import { ThreeDots } from "react-loader-spinner";
 
+import { marked } from "marked";
+import DOMPurify from "dompurify";
+
+marked.setOptions({
+  gfm: true,
+  breaks: true, // Convert line breaks to <br> tags
+});
+
+function convertMarkdownToHTML(markdown: any) {
+  // Convert Markdown to HTML
+  const rawHtml: any = marked(markdown);
+
+  // Sanitize HTML to prevent XSS
+  const sanitizedHtml = DOMPurify.sanitize(rawHtml);
+
+  return sanitizedHtml;
+}
+
 const ChatWindow = ({
   chatType,
   allChat,
@@ -26,15 +44,19 @@ const ChatWindow = ({
       <div className="chat-window" ref={chatContainerRef}>
         {allChat.map((chat, index) => {
           if (chat.type === "bot") {
+            const htmlContent = convertMarkdownToHTML(chat.message);
             return (
               <div className="bot-message" key={index}>
                 <span>
                   <RiRobot3Fill />
                 </span>
-                <div>
-                  <Markdown options={{ forceBlock: true }}>
+                <div
+                  dangerouslySetInnerHTML={{ __html: htmlContent }}
+                  className="wrapper"
+                >
+                  {/* <Markdown options={{ forceBlock: true }}>
                     {chat.message}
-                  </Markdown>
+                  </Markdown> */}
                 </div>
               </div>
             );
@@ -75,16 +97,21 @@ const ChatWindow = ({
         {allChat.map((chat, index) => {
           console.log(chat.message);
           if (chat.type === "bot") {
+            const htmlContent = convertMarkdownToHTML(chat.message);
+
             return (
               <div className="bot-message" key={index}>
                 <span>
                   <RiRobot3Fill />
                 </span>
                 {/* <p>{chat.message}</p> */}
-                <div>
-                  <Markdown options={{ forceBlock: true }}>
+                <div
+                  dangerouslySetInnerHTML={{ __html: htmlContent }}
+                  className="wrapper"
+                >
+                  {/* <Markdown options={{ forceBlock: true }}>
                     {chat.message}
-                  </Markdown>
+                  </Markdown> */}
                 </div>
               </div>
             );
@@ -143,15 +170,20 @@ const ChatWindow = ({
       <div className="chat-window" ref={chatContainerRef}>
         {allChat.map((chat, index) => {
           if (chat.type === "bot") {
+            const htmlContent = convertMarkdownToHTML(chat.message);
+
             return (
               <div className="bot-message" key={index}>
                 <span>
                   <RiRobot3Fill />
                 </span>
-                <div>
-                  <Markdown options={{ forceBlock: true }}>
+                <div
+                  dangerouslySetInnerHTML={{ __html: htmlContent }}
+                  className="wrapper"
+                >
+                  {/* <Markdown options={{ forceBlock: true }}>
                     {chat.message}
-                  </Markdown>
+                  </Markdown> */}
                 </div>
               </div>
             );

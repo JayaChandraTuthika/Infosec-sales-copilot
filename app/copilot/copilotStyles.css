@@ -232,17 +232,17 @@
   justify-content: center;
   align-items: center;
 }
-.chat-window .bot-message div {
+.chat-window .bot-message div.wrapper {
   /* text-align: left; */
-  background-color: rgb(220, 232, 243);
+  /* background-color: rgb(220, 232, 243); */
   padding: 10px 20px;
   margin-bottom: 15px;
   margin-left: 5px;
   border-radius: 10px;
 }
-.chat-window .bot-message p {
+.chat-window .bot-message p.wrapper {
   /* text-align: left; */
-  background-color: rgb(220, 232, 243);
+  /* background-color: rgb(220, 232, 243); */
   padding: 10px 20px;
   margin-bottom: 15px;
   margin-left: 5px;
