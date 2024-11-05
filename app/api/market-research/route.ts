@@ -1,6 +1,8 @@
 const { NextResponse } = require("next/server");
 import fetch from "node-fetch";
 
+export const maxDuration = 240;
+
 export const GET = async (request: Request) => {
   const { searchParams } = new URL(request.url);
   const session_id = searchParams.get("session_id");
