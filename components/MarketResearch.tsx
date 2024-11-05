@@ -177,6 +177,11 @@ const MarketResearch = () => {
             placeholder="Enter URLs to add"
             value={urlInput}
             onChange={(e) => setUrlInput(e.target.value)}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                addUrlToList();
+              }
+            }}
           />
           <button onClick={addUrlToList}>
             <IoMdAdd />
