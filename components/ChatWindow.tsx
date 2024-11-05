@@ -78,10 +78,10 @@ const ChatWindow = ({
                 <span>
                   <RiRobot3Fill />
                 </span>
-                <p>{chat.message}</p>
-                {/* <div>
+                {/* <p>{chat.message}</p> */}
+                <div>
                   <Markdown>{chat.message}</Markdown>
-                </div> */}
+                </div>
               </div>
             );
           } else if (chat.type === "loader") {
@@ -144,7 +144,9 @@ const ChatWindow = ({
                 <span>
                   <RiRobot3Fill />
                 </span>
-                <div>{chat.message}</div>
+                <div>
+                  <Markdown>{chat.message}</Markdown>
+                </div>
               </div>
             );
           } else if (chat.type === "loader") {

@@ -89,7 +89,47 @@
   height: 80svh;
   /* overflow-y: auto; */
 }
-.suggestions {
+.market-insights-intro-card {
+  height: 200px;
+  text-align: left;
+  width: 50%;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  padding: 25px 35px;
+  color: rgb(31, 31, 31);
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px 0px rgb(211, 235, 230);
+  margin-top: 20px;
+  transition: 0.2s all ease-out;
+  /* cursor: pointer; */
+}
+.market-insights-intro-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 10px 0px rgb(187, 221, 214);
+}
+.market-insights-intro-card .text-1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.market-insights-intro-card .text-2 {
+  font-size: 17px;
+  font-weight: 400;
+  color: #464646;
+  margin: 8px 0 5px 0;
+}
+.market-insights-intro-card span {
+  font-size: 17px;
+  font-weight: 400;
+  color: #464646;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  color: #181818;
+  font-weight: 400;
+}
+.market-insights-intro-card .suggestions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;

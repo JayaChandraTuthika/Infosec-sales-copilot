@@ -15,9 +15,39 @@ const CyberGlossary = () => {
   const [inputVal, setInputVal] = useState("");
   const [isLoading, setLoadingState] = useState(false);
 
-  const selectSuggestion = (text: string) => {
-    console.log(text);
-    setInputVal(text);
+  const selectSuggestion = async (text: string) => {
+    const sessionId = localStorage.getItem("session_id");
+    if (text && text !== "") {
+      setChatHistory((prev) => {
+        return [...prev, { type: "user", message: text }, { type: "loader" }];
+      });
+      let message = text;
+      setInputVal("");
+
+      const response = await axios.post("/api/cyber-glossary", {
+        message: text,
+        history: [...chatHistory, { type: "user", message: message }],
+        session_id: sessionId,
+      });
+
+      let botMessage;
+      if (response.data.success) {
+        botMessage = {
+          type: "bot",
+          message: response.data.result.message,
+        };
+      } else {
+        botMessage = {
+          type: "bot",
+          message: "Something went wrong",
+        };
+      }
+      setChatHistory((prev) => {
+        let newChats = [...prev];
+        newChats = newChats.filter((c) => c.type !== "loader");
+        return [...newChats, botMessage];
+      });
+    }
   };
 
   const onEnterInput = (e: any) => {

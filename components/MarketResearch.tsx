@@ -114,7 +114,21 @@ const MarketResearch = () => {
   return (
     <div className="pilot-continer">
       {chatHistory.length === 0 ? (
-        <Suggessions selectSuggestion={selectSuggestion} />
+        <div className="market-insights-intro-card">
+          <p className="text-1">Add Your Company Details</p>
+          <p className="text-2">
+            Enter your company information below. For example:
+          </p>
+          <span>
+            <strong>Company:</strong>&nbsp; Acme Corp
+          </span>
+          <span>
+            <strong>Industry:</strong>&nbsp; Technology
+          </span>
+          <span>
+            <strong>URL:</strong>&nbsp; www.acme.com (optional)
+          </span>
+        </div>
       ) : (
         <ChatWindow chatType="marketResearch" allChat={chatHistory} />
       )}
