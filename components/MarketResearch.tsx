@@ -1,11 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { BsFillSendFill } from "react-icons/bs";
-import { IoMdAdd } from "react-icons/io";
+import { IoIosLink, IoMdAdd } from "react-icons/io";
 import axios from "axios";
 
 import ChatWindow from "./ChatWindow";
 import Suggessions from "./Suggessions";
+import { LuBuilding2 } from "react-icons/lu";
+import { PiSuitcaseBold } from "react-icons/pi";
+import { FiLink } from "react-icons/fi";
 
 type ChatMessage = {
   type: string;
@@ -120,12 +123,15 @@ const MarketResearch = () => {
             Enter your company information below. For example:
           </p>
           <span>
+            <LuBuilding2 className="icon" />
             <strong>Company:</strong>&nbsp; Acme Corp
           </span>
           <span>
+            <PiSuitcaseBold className="icon" />
             <strong>Industry:</strong>&nbsp; Technology
           </span>
           <span>
+            <FiLink className="icon" />
             <strong>URL:</strong>&nbsp; www.acme.com (optional)
           </span>
         </div>
