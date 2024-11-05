@@ -92,7 +92,7 @@
 .market-insights-intro-card {
   /* height: 200px; */
   text-align: left;
-  width: 50%;
+  width: max(40%, 350px);
   font-size: 17px;
   display: flex;
   flex-direction: column;
