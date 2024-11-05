@@ -220,12 +220,9 @@
 .chat-window .user-message span,
 .chat-window .bot-message span {
   padding: 10px;
-  /* margin-top: 5px; */
   height: 40px;
   width: 40px;
   color: #249995;
-  /* background-color: #00b5df; */
-  /* border: 1px solid rgb(208, 208, 208); */
   background-color: #e2eff1;
   border-radius: 50%;
   display: flex;
@@ -233,16 +230,13 @@
   align-items: center;
 }
 .chat-window .bot-message div.wrapper {
-  /* text-align: left; */
-  /* background-color: rgb(220, 232, 243); */
   padding: 10px 20px;
   margin-bottom: 15px;
   margin-left: 5px;
   border-radius: 10px;
+  background-color: #e0eff3;
 }
 .chat-window .bot-message p.wrapper {
-  /* text-align: left; */
-  /* background-color: rgb(220, 232, 243); */
   padding: 10px 20px;
   margin-bottom: 15px;
   margin-left: 5px;

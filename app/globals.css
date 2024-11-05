@@ -10,8 +10,117 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(245, 245, 245);
+  margin: 0 !important;
 }
 
+.chat-window .bot-message h1 {
+  margin: 0.6em 0; /* Default margins vary by browser */
+  font-size: 1.5em; /* Default font-size varies */
+}
+
+.chat-window .bot-message h2 {
+  margin: 0.83em 0; /* Default margins vary */
+  font-size: 1.5em; /* Default font-size varies */
+}
+
+.chat-window .bot-message h3 {
+  margin: 1em 0; /* Default margins vary */
+  font-size: 1.17em; /* Default font-size varies */
+}
+
+.chat-window .bot-message h4 {
+  margin: 1.33em 0; /* Default margins vary */
+  font-size: 1em; /* Default font-size varies */
+}
+
+.chat-window .bot-message h5 {
+  margin: 1.67em 0; /* Default margins vary */
+  font-size: 0.83em; /* Default font-size varies */
+}
+
+.chat-window .bot-message h6 {
+  margin: 1.5em 0; /* Default margins vary */
+  font-size: 0.67em; /* Default font-size varies */
+}
+
+/* Paragraphs */
+.chat-window .bot-message p {
+  margin: 1em 0; /* Default margins */
+}
+
+/* Lists */
+.chat-window .bot-message ul,
+.chat-window .bot-message ol {
+  margin: 1em 0; /* Default margins */
+  padding-left: 2em; /* Indentation */
+}
+
+.chat-window .bot-message li {
+  margin: 0.5em 0; /* Default margins */
+}
+
+/* Blockquotes */
+.chat-window .bot-message blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid #ccc; /* Default border */
+  color: #555; /* Default color */
+  font-style: italic; /* Default font style */
+}
+
+/* Links */
+.chat-window .bot-message a {
+  color: blue; /* Default color */
+  text-decoration: underline; /* Default text decoration */
+}
+
+.chat-window .bot-message a:hover {
+  text-decoration: none; /* Default hover effect */
+}
+
+/* Code */
+.chat-window .bot-message code {
+  font-family: monospace; /* Default font-family */
+  background-color: #f5f5f5; /* Default background color */
+  padding: 0.2em 0.4em; /* Padding */
+}
+
+.chat-window .bot-message pre {
+  background-color: #f5f5f5; /* Default background color */
+  padding: 1em; /* Padding */
+  overflow-x: auto; /* Horizontal scroll for long code lines */
+}
+
+/* Images */
+.chat-window .bot-message img {
+  max-width: 100%; /* Responsive images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Tables */
+.chat-window .bot-message table {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full width */
+  margin: 1em 0; /* Margin */
+}
+
+.chat-window .bot-message th,
+.chat-window .bot-message td {
+  border: 1px solid #ccc; /* Default border */
+  padding: 8px; /* Padding */
+  text-align: left; /* Default alignment */
+}
+
+.chat-window .bot-message th {
+  background-color: #f2f2f2; /* Default header background */
+}
+
+/* Horizontal Rules */
+.chat-window .bot-message hr {
+  border: 0; /* Remove default border */
+  border-top: 1px solid #ccc; /* Add a top border */
+  margin: 1.5em 0; /* Margin */
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -68,14 +177,14 @@ body {
   }
 }
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
 
 /* Home page styles [start] */
 .landing {

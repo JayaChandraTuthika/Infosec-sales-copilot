@@ -116,7 +116,7 @@ const MarketResearch = () => {
       let latestMarketInsight = response.data.result.history;
       // console.log(latestMarketInsight);
       // test
-      setChatHistory([latestMarketInsight]);
+      setChatHistory(latestMarketInsight);
     }
   };
 
