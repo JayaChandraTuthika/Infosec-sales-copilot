@@ -12,6 +12,7 @@ import { FiLink } from "react-icons/fi";
 import { useToast } from "@/hooks/use-toast";
 import { FaPlus } from "react-icons/fa";
 import { useLoading } from "@/store/AppContext";
+import { IoClose } from "react-icons/io5";
 
 type ChatMessage = {
   type: string;
@@ -135,6 +136,13 @@ const MarketResearch = () => {
     setExpandInputs(!expandInputs);
   };
 
+  const removeUrlFromArr = (urlIndex: number) => {
+    let newUrlList = [...marketInputs.urlList];
+    newUrlList.splice(urlIndex, 1);
+
+    setMarketInputs((prev) => ({ ...prev, urlList: newUrlList }));
+  };
+
   useEffect(() => {
     getChatData();
   }, []);
@@ -206,8 +214,11 @@ const MarketResearch = () => {
           </button>
         </div>
         <p className="urls-list">
-          {marketInputs.urlList.map((url) => (
-            <span key={url}>{url}</span>
+          {marketInputs.urlList.map((url, u) => (
+            <span key={url}>
+              {url}{" "}
+              <IoClose className="icon" onClick={() => removeUrlFromArr(u)} />
+            </span>
           ))}
         </p>
         <button className="send-btn" onClick={sendMessage}>

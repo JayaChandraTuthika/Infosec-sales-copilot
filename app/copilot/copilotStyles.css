@@ -436,6 +436,12 @@
   font-weight: 500;
   padding: 4px 8px;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+.pilot-continer .input-group .urls-list span .icon {
+  margin-left: 5px;
+  cursor: pointer;
 }
 .pilot-continer .input-group .send-btn {
   display: flex;
