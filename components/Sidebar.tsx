@@ -8,13 +8,13 @@ const Sidebar = ({ selectedFeature }: { selectedFeature: string }) => {
   return (
     <aside className="sidebar-desktop">
       <div className="sidebar-desktop-header">
-        <Image
+        {/* <Image
           src="img/infosec-logo.svg"
           className="sidebar-desktop-logo"
           width={150}
           height={70}
           alt="logo"
-        />
+        /> */}
         {/* <Image
           src="/icons/infosec-favicon.png"
           className="sidebar-desktop-logo-small"

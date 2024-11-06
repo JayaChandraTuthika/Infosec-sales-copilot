@@ -23,12 +23,12 @@ const Copilot = () => {
       <Sidebar selectedFeature={feature} />
       <section className="content">
         <header>
-          {/* <Image
-            src="img/infosec-logo.svg"
-            width={180}
-            height={70}
+          <Image
+            src="/img/infosec-logo.png"
+            width={120}
+            height={50}
             alt="logo"
-          /> */}
+          />
           <button className="back-btn" onClick={() => router.replace("/")}>
             <IoReturnUpBack className="mr-2" />
             Home

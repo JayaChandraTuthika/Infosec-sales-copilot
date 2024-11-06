@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <main>
       <header className="p-5 px-7">
-        <Image src="img/infosec-logo.svg" width={150} height={70} alt="logo" />
+        <Image src="img/infosec-logo.svg" width={200} height={80} alt="logo" />
       </header>
       <section className="landing">
         <h1>Welcome to K2K Connect</h1>
