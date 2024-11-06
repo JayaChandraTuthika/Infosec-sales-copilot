@@ -140,7 +140,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 80svh;
+  height: 85svh;
   /* overflow-y: auto; */
 }
 .market-insights-intro-card {
@@ -249,8 +249,8 @@
 .chat-window {
   width: 100%;
   padding: 10px;
-  /* height: calc(100svh - 220px); */
-  /* max-height: 100%; */
+  /* height: calc(100svh - 270px); */
+  max-height: 90%;
   /* margin-top: auto; */
   /* background-color: white; */
   border-radius: 10px;
@@ -306,10 +306,39 @@
 }
 
 .pilot-continer .input-group {
+  position: absolute;
+  bottom: 15px;
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-top: auto;
+  /* min-height: 30px; */
+
+  max-height: 30px;
+  overflow: hidden;
+  transition: 0.3s all ease-out;
+}
+.pilot-continer .input-group.expand {
+  bottom: 40px;
+  max-height: unset;
+  background-color: #f6f6f6;
+}
+.pilot-continer .input-group .expand-inputs-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: #00b5df;
+  width: 30px;
+  height: 30px;
+  align-self: center;
+}
+
+.pilot-continer .input-group.expand .expand-inputs-btn {
+  display: none;
 }
 .pilot-continer .input-group .inputs-1 {
   display: flex;

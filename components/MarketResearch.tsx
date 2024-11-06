@@ -10,6 +10,7 @@ import { LuBuilding2 } from "react-icons/lu";
 import { PiSuitcaseBold } from "react-icons/pi";
 import { FiLink } from "react-icons/fi";
 import { useToast } from "@/hooks/use-toast";
+import { FaPlus } from "react-icons/fa";
 
 type ChatMessage = {
   type: string;
@@ -28,6 +29,7 @@ const MarketResearch = () => {
     urlList: [],
   });
   const [urlInput, setUrlInput] = useState("");
+  const [expandInputs, setExpandInputs] = useState(false);
   const { toast } = useToast();
 
   const selectSuggestion = (text: string) => {
@@ -57,6 +59,7 @@ const MarketResearch = () => {
 
   const sendMessage = async () => {
     const sessionId = localStorage.getItem("session_id");
+    setExpandInputs(false);
 
     setChatHistory((prev) => {
       return [
@@ -79,7 +82,6 @@ const MarketResearch = () => {
     resetInputs();
 
     const response = await axios.post("/api/market-research", payload);
-
     let botMessage;
     if (response.data.success) {
       botMessage = {
@@ -113,11 +115,18 @@ const MarketResearch = () => {
         });
       }
 
-      let latestMarketInsight = response.data.result.history;
+      let latestMarketInsights = response.data.result.history;
       // console.log(latestMarketInsight);
+      if (latestMarketInsights.length > 0) {
+        setExpandInputs(false);
+      }
       // test
-      setChatHistory(latestMarketInsight);
+      setChatHistory(latestMarketInsights);
     }
+  };
+
+  const toggleInputsExpand = () => {
+    setExpandInputs(!expandInputs);
   };
 
   useEffect(() => {
@@ -148,7 +157,10 @@ const MarketResearch = () => {
       ) : (
         <ChatWindow chatType="marketResearch" allChat={chatHistory} />
       )}
-      <div className="input-group">
+      <div className={`input-group ${expandInputs ? "expand" : ""}`}>
+        <button onClick={toggleInputsExpand} className="expand-inputs-btn">
+          <FaPlus />
+        </button>
         <div className="inputs-1">
           <input
             type="text"
