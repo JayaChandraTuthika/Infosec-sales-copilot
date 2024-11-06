@@ -20,20 +20,15 @@ const Copilot = () => {
 
   return (
     <main className="copilot-bg">
-      <Sidebar selectedFeature={feature} />
+      <header>
+        <Image src="/img/infosec-logo.png" width={120} height={50} alt="logo" />
+        <button className="back-btn" onClick={() => router.replace("/")}>
+          <IoReturnUpBack className="mr-2" />
+          Home
+        </button>
+      </header>
       <section className="content">
-        <header>
-          <Image
-            src="/img/infosec-logo.png"
-            width={120}
-            height={50}
-            alt="logo"
-          />
-          <button className="back-btn" onClick={() => router.replace("/")}>
-            <IoReturnUpBack className="mr-2" />
-            Home
-          </button>
-        </header>
+        <Sidebar selectedFeature={feature} />
         {feature === "cyber-glossary" && <CyberGlossary />}
         {feature === "market-research" && <MarketResearch />}
         {feature === "product-catalog" && <ProductCatalog />}

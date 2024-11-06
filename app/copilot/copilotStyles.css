@@ -26,10 +26,10 @@
 }
 .copilot-bg .content {
   width: calc(100% - var(--sidebar-width));
-  margin-left: var(--sidebar-width);
   transition: 0.5s all ease;
+  position: relative;
 }
-.copilot-bg .content header {
+.copilot-bg header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -38,7 +38,7 @@
   background-image: linear-gradient(150deg, #103163, #137da7, #0bad98);
   /* background-color: #6d2cf3; */
 }
-.copilot-bg .content header .back-btn {
+.copilot-bg header .back-btn {
   font-size: 14px;
   font-weight: 400;
   /* color: rgb(108, 108, 108); */
@@ -53,7 +53,7 @@
   /* margin-left: auto; */
   transition: 0.2s all ease;
 }
-.copilot-bg .content header .back-btn:hover {
+.copilot-bg header .back-btn:hover {
   background-color: white;
   color: rgb(34, 26, 139);
 }
@@ -83,7 +83,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 /* .sidebar-desktop:hover ~ .link {
   display: flex;
@@ -141,6 +141,8 @@
   align-items: center;
   position: relative;
   height: 85svh;
+  margin-left: var(--sidebar-width);
+
   /* overflow-y: auto; */
 }
 .market-insights-intro-card {
