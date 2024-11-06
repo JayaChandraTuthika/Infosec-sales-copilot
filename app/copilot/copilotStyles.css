@@ -50,9 +50,9 @@
 }
 .sidebar-desktop .sidebar-desktop-logo {
   margin: 20px 10px;
-  height: 70px;
-  max-width: 120px;
-  min-width: 120px;
+  height: 60px;
+  max-width: 130px;
+  min-width: 130px;
 }
 .sidebar-desktop .sidebar-desktop-logo-small {
   margin: 20px 10px;
@@ -63,6 +63,7 @@
 .sidebar-desktop .sidebar-desktop-header {
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 .sidebar-desktop .sidebar-desktop-header button {
   /* background-color: #00b5df; */
@@ -94,9 +95,11 @@
 }
 .sidebar-desktop .sidebar-list .link img {
   margin-right: 20px;
+  max-width: unset;
 }
 .sidebar-desktop .sidebar-list .link span {
   text-wrap: nowrap;
+  /* display: none; */
 }
 .sidebar-desktop .sidebar-list .link:hover {
   /* border-left: 5px solid rgb(55, 129, 213); */
