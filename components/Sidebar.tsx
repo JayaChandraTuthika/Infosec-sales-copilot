@@ -2,10 +2,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { IoMdClose } from "react-icons/io";
 
 const Sidebar = ({ selectedFeature }: { selectedFeature: string }) => {
   return (
     <aside className="sidebar-desktop">
+      <div className="sidebar-desktop-header">
+        {/* <Image
+          src="img/infosec-logo.svg"
+          className="sidebar-desktop-logo"
+          width={120}
+          height={70}
+          alt="logo"
+        /> */}
+        <Image
+          src="/icons/infosec-favicon.png"
+          className="sidebar-desktop-logo-small"
+          width={50}
+          height={50}
+          alt="logo"
+        />
+        {/* <button>
+          <IoMdClose />
+        </button> */}
+      </div>
       <div className="sidebar-list">
         <Link
           href="/copilot?feature=cyber-glossary"
@@ -19,13 +39,13 @@ const Sidebar = ({ selectedFeature }: { selectedFeature: string }) => {
                 ? "icons/cyber-glossary.svg"
                 : "icons/cyber-glossary-2.svg"
             }
-            width={30}
-            height={30}
+            width={23}
+            height={23}
             alt="logo"
             className="mb-1"
           />
 
-          <span>Glossary</span>
+          <span>Cyber Glossary</span>
         </Link>
         <Link
           href="/copilot?feature=market-research"
@@ -39,13 +59,13 @@ const Sidebar = ({ selectedFeature }: { selectedFeature: string }) => {
                 ? "icons/market-research.svg"
                 : "icons/market-research-2.svg"
             }
-            width={30}
-            height={30}
+            width={23}
+            height={23}
             alt="logo"
             className="mb-1"
           />
 
-          <span>Market</span>
+          <span>Market Insights</span>
         </Link>
         <Link
           href="/copilot?feature=product-catalog"
@@ -59,13 +79,13 @@ const Sidebar = ({ selectedFeature }: { selectedFeature: string }) => {
                 ? "icons/product-catalog.svg"
                 : "icons/product-catalog-2.svg"
             }
-            width={30}
-            height={30}
+            width={23}
+            height={23}
             alt="logo"
             className="mb-1"
           />
 
-          <span>Product</span>
+          <span>Product Catalog</span>
         </Link>
         <Link
           href="/copilot?feature=pitch-creator"
@@ -79,12 +99,12 @@ const Sidebar = ({ selectedFeature }: { selectedFeature: string }) => {
                 ? "icons/pitch-creator.svg"
                 : "icons/pitch-creator-2.svg"
             }
-            width={30}
-            height={30}
+            width={23}
+            height={23}
             alt="logo"
             className="mb-1"
           />
-          <span>Pitch</span>
+          <span>Pitch Creator</span>
         </Link>
       </div>
     </aside>
