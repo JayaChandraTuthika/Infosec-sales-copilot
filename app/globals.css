@@ -11,6 +11,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(245, 245, 245);
   margin: 0 !important;
+  position: relative;
+  z-index: 0;
 }
 
 .chat-window .bot-message h1 {
@@ -279,3 +281,33 @@ body {
   box-shadow: 3px 3px 15px 0px rgba(19, 141, 172, 0.418);
 }
 /* Home page styles [end] */
+
+/* Loader styles */
+.loader-overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+  backdrop-filter: blur(5px);
+  pointer-events: all;
+}
+.spinner-main span:nth-child(1) {
+  border-style: double !important;
+  border-color: rgb(15, 201, 145) !important;
+  opacity: 1 !important;
+}
+.spinner-main span:nth-child(2) {
+  border-style: dotted !important;
+  border-color: rgb(121, 112, 245) !important;
+  opacity: 1 !important;
+}

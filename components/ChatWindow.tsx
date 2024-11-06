@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import { IoPerson } from "react-icons/io5";
 import { RiRobot3Fill } from "react-icons/ri";
 import Markdown from "markdown-to-jsx";
-import { ThreeDots } from "react-loader-spinner";
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -20,6 +19,7 @@ import remarkGfm from "remark-gfm";
 
 import { marked } from "marked";
 import DOMPurify from "dompurify";
+import { PulseLoader } from "react-spinners";
 
 marked.setOptions({
   gfm: true,
@@ -36,118 +36,118 @@ function convertMarkdownToHTML(markdown: any) {
   return sanitizedHtml;
 }
 
-const markdownString = `# OSINT Report 
+// const markdownString = `# OSINT Report
 
-## Executive Summary
-This report provides an in-depth analysis of the organization's security landscape, compliance requirements, risk posture, and potential vulnerabilities. It includes recommendations for improving security and compliance adherence. 
+// ## Executive Summary
+// This report provides an in-depth analysis of the organization's security landscape, compliance requirements, risk posture, and potential vulnerabilities. It includes recommendations for improving security and compliance adherence.
 
-## Foundation Discovery 
+// ## Foundation Discovery
 
-### Company Profile
-- **Organization Name:** Not Available
-- **Domain:** Not Available
-- **Location:** Not Available
-- **Employee Size:** Not Available
-- **Primary Industry:** Not Available
-- **Secondary Industry:** Not Available
+// ### Company Profile
+// - **Organization Name:** Not Available
+// - **Domain:** Not Available
+// - **Location:** Not Available
+// - **Employee Size:** Not Available
+// - **Primary Industry:** Not Available
+// - **Secondary Industry:** Not Available
 
-### Technology Stack
-| Technology      | Category       | Description      |
-|-----------------|----------------|------------------|
-| Not Available    | Not Available   | Not Available     |
+// ### Technology Stack
+// | Technology      | Category       | Description      |
+// |-----------------|----------------|------------------|
+// | Not Available    | Not Available   | Not Available     |
 
-### Organization Chart
-- **Departmental Headcounts:** Not Available
-- **Key Personnel IDs:** Not Available
+// ### Organization Chart
+// - **Departmental Headcounts:** Not Available
+// - **Key Personnel IDs:** Not Available
 
-## Compliance and Regulatory Requirements 
+// ## Compliance and Regulatory Requirements
 
-### Compliance Standards Overview
-- **NIST:** Not Available
-- **DORA:** Not Available
-- **PCI DSS:** Not Available
-- **GDPR:** Not Available
-- **ISO/IEC 27001:** Not Available
-- **SOX:** Not Available
+// ### Compliance Standards Overview
+// - **NIST:** Not Available
+// - **DORA:** Not Available
+// - **PCI DSS:** Not Available
+// - **GDPR:** Not Available
+// - **ISO/IEC 27001:** Not Available
+// - **SOX:** Not Available
 
-## Risk Scoring and Security Posture 
+// ## Risk Scoring and Security Posture
 
-### Risk Scoring Model
-- **Public-Facing Data Risk Score:** Not Available
+// ### Risk Scoring Model
+// - **Public-Facing Data Risk Score:** Not Available
 
-### Security Posture Assessment
-- **Security Implications of Technologies:** Not Available
-- **Departmental Exposure:** Not Available
-- **Overall Security Posture Rating:** Not Available
+// ### Security Posture Assessment
+// - **Security Implications of Technologies:** Not Available
+// - **Departmental Exposure:** Not Available
+// - **Overall Security Posture Rating:** Not Available
 
-## Attack Surface Mapping 
+// ## Attack Surface Mapping
 
-### Technology Vulnerabilities
-- **Common Vulnerabilities:** Not Available
+// ### Technology Vulnerabilities
+// - **Common Vulnerabilities:** Not Available
 
-### Social Engineering Opportunities
-- **Employee Departments:** Not Available
-- **External Links:** Not Available
+// ### Social Engineering Opportunities
+// - **Employee Departments:** Not Available
+// - **External Links:** Not Available
 
-### Third-Party Risk
-- **Key Vendors and Technologies:** Not Available
+// ### Third-Party Risk
+// - **Key Vendors and Technologies:** Not Available
 
-### Potential Attack Scenarios
-- **Phishing:** Not Available
-- **Network Intrusion:** Not Available
+// ### Potential Attack Scenarios
+// - **Phishing:** Not Available
+// - **Network Intrusion:** Not Available
 
-## Threat Intelligence Correlation 
+// ## Threat Intelligence Correlation
 
-### Known Vulnerabilities
-- **CVE References:** Not Available
+// ### Known Vulnerabilities
+// - **CVE References:** Not Available
 
-### Industry-Specific Threat Trends
-- **Recent Security Incidents:** Not Available
+// ### Industry-Specific Threat Trends
+// - **Recent Security Incidents:** Not Available
 
-## Dashboard and Visualization Recommendations 
+// ## Dashboard and Visualization Recommendations
 
-### Risk Score and Compliance Dashboard
-- **Visual Elements:** Not Available
+// ### Risk Score and Compliance Dashboard
+// - **Visual Elements:** Not Available
 
-### Technology Risk Summary
-- **Graphs/Charts:** Not Available
+// ### Technology Risk Summary
+// - **Graphs/Charts:** Not Available
 
-### Organizational Insights
-- **Departmental Insights Visualization:** Not Available
+// ### Organizational Insights
+// - **Departmental Insights Visualization:** Not Available
 
-## Compliance Benchmarking and Improvement Suggestions 
+// ## Compliance Benchmarking and Improvement Suggestions
 
-### Benchmarking
-- **Current Compliance vs. Standards:** Not Available
+// ### Benchmarking
+// - **Current Compliance vs. Standards:** Not Available
 
-### Improvement Suggestions
-- **Specific Actions for Compliance:** Not Available
+// ### Improvement Suggestions
+// - **Specific Actions for Compliance:** Not Available
 
-## Report Format 
+// ## Report Format
 
-### Table of Contents
-1. Executive Summary
-2. Foundation Discovery
-   - Company Profile
-   - Technology Stack
-   - Organization Chart
-3. Compliance and Regulatory Requirements
-   - Compliance Standards Overview
-4. Risk Scoring and Security Posture
-   - Risk Scoring Model
-   - Security Posture Assessment
-5. Attack Surface Mapping
-6. Threat Intelligence Correlation
-7. Dashboard Recommendations
-8. Compliance Benchmarking and Suggestions
-9. Appendices (if needed)
+// ### Table of Contents
+// 1. Executive Summary
+// 2. Foundation Discovery
+//    - Company Profile
+//    - Technology Stack
+//    - Organization Chart
+// 3. Compliance and Regulatory Requirements
+//    - Compliance Standards Overview
+// 4. Risk Scoring and Security Posture
+//    - Risk Scoring Model
+//    - Security Posture Assessment
+// 5. Attack Surface Mapping
+// 6. Threat Intelligence Correlation
+// 7. Dashboard Recommendations
+// 8. Compliance Benchmarking and Suggestions
+// 9. Appendices (if needed)
 
-### Appendices
-- **Data Tables:** Not Available
-- **Raw Findings:** Not Available
+// ### Appendices
+// - **Data Tables:** Not Available
+// - **Raw Findings:** Not Available
 
-This report is structured to be enterprise-friendly and can be exported in PDF or HTML format. It uses tables, headers, and structured sections for readability, with a Table of Contents for easy navigation. All insights are presented in a clear, concise, and actionable manner.
-`;
+// This report is structured to be enterprise-friendly and can be exported in PDF or HTML format. It uses tables, headers, and structured sections for readability, with a Table of Contents for easy navigation. All insights are presented in a clear, concise, and actionable manner.
+// `;
 
 const ChatWindow = ({
   chatType,
@@ -175,11 +175,11 @@ const ChatWindow = ({
 
             return (
               <div className="bot-message" key={index}>
-                <span>
+                <span className="icon">
                   <RiRobot3Fill />
                 </span>
                 <div
-                  className="wrapper"
+                  className="wrapper-1"
                   dangerouslySetInnerHTML={{ __html: chat.message }}
                 />
               </div>
@@ -187,11 +187,17 @@ const ChatWindow = ({
           } else if (chat.type === "loader") {
             return (
               <div className="bot-message" key={index}>
-                <span>
+                <span className="icon">
                   <RiRobot3Fill />
                 </span>
-                <div className="wrapper">
-                  <ThreeDots
+                <PulseLoader
+                  size={12}
+                  className="chat-loader"
+                  color="#0b639e"
+                />
+                {/* <div className="wrapper"> */}
+
+                {/* <ThreeDots
                     visible={true}
                     height="18"
                     width="80"
@@ -200,8 +206,8 @@ const ChatWindow = ({
                     ariaLabel="three-dots-loading"
                     wrapperStyle={{}}
                     wrapperClass=""
-                  />
-                </div>
+                  /> */}
+                {/* </div> */}
               </div>
             );
           } else {
@@ -227,22 +233,27 @@ const ChatWindow = ({
 
             return (
               <div className="bot-message" key={index}>
-                <span>
+                <span className="icon">
                   <RiRobot3Fill />
                 </span>
                 <div
                   dangerouslySetInnerHTML={{ __html: chat.message }}
-                  className="wrapper"
+                  className="wrapper-1"
                 ></div>
               </div>
             );
           } else if (chat.type === "loader") {
             return (
               <div className="bot-message" key={index}>
-                <span>
+                <span className="icon">
                   <RiRobot3Fill />
                 </span>
-                <div className="wrapper">
+                <PulseLoader
+                  size={12}
+                  className="chat-loader"
+                  color="#0b639e"
+                />
+                {/* <div className="wrapper">
                   <ThreeDots
                     visible={true}
                     height="18"
@@ -253,7 +264,7 @@ const ChatWindow = ({
                     wrapperStyle={{}}
                     wrapperClass=""
                   />
-                </div>
+                </div> */}
               </div>
             );
           } else {
@@ -297,12 +308,12 @@ const ChatWindow = ({
 
             return (
               <div className="bot-message" key={index}>
-                <span>
+                <span className="icon">
                   <RiRobot3Fill />
                 </span>
                 <div
                   dangerouslySetInnerHTML={{ __html: htmlContent }}
-                  className="wrapper"
+                  className="wrapper-1"
                 >
                   {/* <Markdown options={{ forceBlock: true }}>
                     {chat.message}
@@ -313,10 +324,15 @@ const ChatWindow = ({
           } else if (chat.type === "loader") {
             return (
               <div className="bot-message" key={index}>
-                <span>
+                <span className="icon">
                   <RiRobot3Fill />
                 </span>
-                <div className="wrapper">
+                <PulseLoader
+                  size={12}
+                  className="chat-loader"
+                  color="#0b639e"
+                />
+                {/* <div className="wrapper">
                   <ThreeDots
                     visible={true}
                     height="18"
@@ -327,7 +343,7 @@ const ChatWindow = ({
                     wrapperStyle={{}}
                     wrapperClass=""
                   />
-                </div>
+                </div> */}
               </div>
             );
           } else {

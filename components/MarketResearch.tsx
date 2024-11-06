@@ -11,6 +11,7 @@ import { PiSuitcaseBold } from "react-icons/pi";
 import { FiLink } from "react-icons/fi";
 import { useToast } from "@/hooks/use-toast";
 import { FaPlus } from "react-icons/fa";
+import { useLoading } from "@/store/AppContext";
 
 type ChatMessage = {
   type: string;
@@ -31,6 +32,7 @@ const MarketResearch = () => {
   const [urlInput, setUrlInput] = useState("");
   const [expandInputs, setExpandInputs] = useState(false);
   const { toast } = useToast();
+  const { isLoading, showLoader, hideLoader } = useLoading();
 
   const selectSuggestion = (text: string) => {
     const mockData = {
@@ -58,6 +60,7 @@ const MarketResearch = () => {
   };
 
   const sendMessage = async () => {
+    showLoader();
     const sessionId = localStorage.getItem("session_id");
     setExpandInputs(false);
 
@@ -82,6 +85,7 @@ const MarketResearch = () => {
     resetInputs();
 
     const response = await axios.post("/api/market-research", payload);
+    hideLoader();
     let botMessage;
     if (response.data.success) {
       botMessage = {
@@ -102,6 +106,7 @@ const MarketResearch = () => {
   };
 
   const getChatData = async () => {
+    showLoader();
     const sessionId = localStorage.getItem("session_id");
 
     const response = await axios.get(
@@ -122,6 +127,7 @@ const MarketResearch = () => {
       }
       // test
       setChatHistory(latestMarketInsights);
+      hideLoader();
     }
   };
 

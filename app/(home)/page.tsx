@@ -6,10 +6,13 @@ import { useToast } from "@/hooks/use-toast";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { useLoading } from "@/store/AppContext";
 
 export default function Home() {
   const { toast } = useToast();
   const router = useRouter();
+  const { showLoader, hideLoader } = useLoading();
+
   const navigateToCopilot = () => {
     router.push("/copilot/");
     // if (typeof window !== "undefined") {

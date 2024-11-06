@@ -4,6 +4,7 @@ import Suggessions from "./Suggessions";
 import ChatWindow from "./ChatWindow";
 import { BsFillSendFill } from "react-icons/bs";
 import axios from "axios";
+import { useLoading } from "@/store/AppContext";
 
 type ChatMessage = {
   type: string;
@@ -13,6 +14,7 @@ type ChatMessage = {
 const ProductCatalog = () => {
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
   const [inputVal, setInputVal] = useState("");
+  const { isLoading, showLoader, hideLoader } = useLoading();
 
   const selectSuggestion = async (text: string) => {
     const sessionId = localStorage.getItem("session_id");
@@ -56,6 +58,7 @@ const ProductCatalog = () => {
   };
 
   const sendMessage = async () => {
+    showLoader();
     const sessionId = localStorage.getItem("session_id");
 
     setChatHistory((prev) => {
@@ -69,6 +72,7 @@ const ProductCatalog = () => {
       history: [...chatHistory, { type: "user", message: message }],
       session_id: sessionId,
     });
+    hideLoader();
 
     let botMessage;
     if (response.data.success) {
@@ -90,6 +94,7 @@ const ProductCatalog = () => {
   };
 
   const getChatData = async () => {
+    showLoader();
     const sessionId = localStorage.getItem("session_id");
     console.log(sessionId);
 
@@ -101,6 +106,7 @@ const ProductCatalog = () => {
       console.log(newChatHistory);
       setChatHistory(newChatHistory);
     }
+    hideLoader();
   };
 
   useEffect(() => {
